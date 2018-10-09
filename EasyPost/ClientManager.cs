@@ -5,6 +5,7 @@ namespace EasyPost {
     /// Provides the ability to manage delegated construction of client connections for requests.
     /// </summary>
     public static class ClientManager {
+        [ThreadStatic]
         private static Func<Client> getCurrent;
 
         internal static Client Build() {
